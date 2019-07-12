@@ -11,7 +11,7 @@ const topics = document.querySelector('.topics')
 
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
     .then(res => {
-
+        topics.appendChild(createTab(res))
     })
     .catch(err => {
         console.log(err)
@@ -20,7 +20,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
 function createTab() {
     const tab = document.createElement('div')
     tab.classList.add('tab')
-    tab.textContent = `${data.topic}`
+    tab.textContent = 'topic'
 
     return tab
 }
